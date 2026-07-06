@@ -1,0 +1,22 @@
+{
+  "name": "Convite — Aniversário de João Miguel",
+  "short_name": "João Miguel 12 anos",
+  "description": "Convite interativo do aniversário de 12 anos do João Miguel",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0c09",
+  "theme_color": "#0a0c09",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/imagens/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/imagens/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Uma Missão Especial — Aniversário de João Miguel</title>
+<meta name="description" content="Convite de aniversário de 12 anos do João Miguel — 27 de agosto às 16h.">
+<meta name="theme-color" content="#0b0d0a">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;800&family=Yuji+Syuku&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cursor com brilho (desktop) -->
+<div class="ninja-cursor" id="ninjaCursor" aria-hidden="true"></div>
+
+<!-- Canvas de fundo: folhas, fumaça e partículas -->
+<canvas id="fxCanvas" aria-hidden="true"></canvas>
+
+<!-- ================= INTRO / MISSÃO ================= -->
+<section id="intro" class="intro">
+  <div class="intro-glow"></div>
+  <div class="intro-content">
+    <p class="intro-eyebrow" id="introEyebrow">MISSÃO CLASSE S</p>
+    <h1 class="intro-line" id="introLine1"></h1>
+    <h1 class="intro-line intro-line-alt" id="introLine2" hidden></h1>
+
+    <button class="scroll-wrap" id="scrollButton" hidden aria-label="Abrir pergaminho do convite">
+      <svg class="scroll-svg" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#efe3c2"/>
+            <stop offset="100%" stop-color="#dccb9c"/>
+          </linearGradient>
+        </defs>
+        <rect x="10" y="30" width="200" height="80" rx="6" fill="url(#paperGrad)"/>
+        <rect x="4" y="24" width="14" height="92" rx="7" fill="#7a3b2e"/>
+        <rect x="202" y="24" width="14" height="92" rx="7" fill="#7a3b2e"/>
+        <circle cx="110" cy="70" r="22" fill="#8b2635" opacity="0.92"/>
+        <text x="110" y="78" text-anchor="middle" font-size="20" fill="#f4e3c1" font-family="'Yuji Syuku', serif">忍</text>
+      </svg>
+      <span class="scroll-hint">toque para abrir</span>
+    </button>
+  </div>
+</section>
+
+<!-- ================= EXPERIÊNCIA PRINCIPAL ================= -->
+<main id="main" class="site" hidden>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-rings" aria-hidden="true">
+      <span class="ring ring-1"></span>
+      <span class="ring ring-2"></span>
+    </div>
+    <div class="hero-inner">
+      <div class="photo-frame" id="heroPhotoFrame">
+        <img src="assets/fotos/foto-principal.jpg" alt="João Miguel" id="heroPhoto"
+             onerror="this.parentElement.classList.add('photo-placeholder')">
+        <span class="photo-placeholder-label">Foto do João Miguel<br><small>assets/fotos/foto-principal.jpg</small></span>
+        <svg class="plate" viewBox="0 0 300 300" aria-hidden="true">
+          <circle cx="150" cy="150" r="145" fill="none" stroke="#e0662b" stroke-width="4"/>
+          <circle cx="150" cy="150" r="132" fill="none" stroke="#c4c8cc" stroke-width="1.5" opacity="0.6"/>
+        </svg>
+      </div>
+      <p class="eyebrow">convocação de missão · aniversário</p>
+      <h2 class="hero-name">João Miguel</h2>
+      <p class="hero-age"><span>12</span> anos</p>
+      <div class="headband" aria-hidden="true">
+        <svg viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 30 L60 14 L60 46 Z" fill="#12140f"/>
+          <path d="M260 30 L200 14 L200 46 Z" fill="#12140f"/>
+          <rect x="55" y="10" width="150" height="40" rx="5" fill="#c4c8cc"/>
+          <rect x="55" y="10" width="150" height="40" rx="5" fill="none" stroke="#5b6066" stroke-width="1.5"/>
+          <circle cx="68" cy="20" r="2.4" fill="#5b6066"/>
+          <circle cx="192" cy="20" r="2.4" fill="#5b6066"/>
+          <circle cx="68" cy="40" r="2.4" fill="#5b6066"/>
+          <circle cx="192" cy="40" r="2.4" fill="#5b6066"/>
+          <g transform="translate(130,30)">
+            <path d="M0,-14 C10,-14 14,-4 14,0 C14,4 10,14 0,14 C4,10 6,4 6,0 C6,-4 4,-10 0,-14 Z" fill="#12140f"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><span></span><p>role para continuar</p></div>
+  </section>
+
+  <!-- MENSAGEM -->
+  <section class="message-section reveal">
+    <div class="message-card">
+      <span class="corner corner-tl"></span><span class="corner corner-br"></span>
+      <p class="message-text">
+        Há momentos que ficam para sempre na memória.<br>
+        Este é um deles.<br>
+        <strong>E queremos viver esse momento com você.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="gallery-section reveal" id="galeria">
+    <p class="eyebrow center">registros da jornada</p>
+    <h3 class="section-title center"><span class="shuriken" aria-hidden="true"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 2 L24 16 L38 12 L26 20 L38 28 L24 24 L20 38 L16 24 L2 28 L14 20 L2 12 L16 16 Z" fill="currentColor"/><circle cx="20" cy="20" r="3.5" fill="#0a0c09"/></svg></span> Galeria</h3>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- preenchido via JS a partir de um array (fácil adicionar mais fotos depois) -->
+    </div>
+  </section>
+
+  <!-- CONTAGEM REGRESSIVA -->
+  <section class="countdown-section reveal">
+    <p class="eyebrow center">contagem para a missão</p>
+    <h3 class="section-title center"><span class="shuriken" aria-hidden="true"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 2 L24 16 L38 12 L26 20 L38 28 L24 24 L20 38 L16 24 L2 28 L14 20 L2 12 L16 16 Z" fill="currentColor"/><circle cx="20" cy="20" r="3.5" fill="#0a0c09"/></svg></span> Faltam...</h3>
+    <div class="countdown" id="countdown">
+      <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label">dias</span></div>
+      <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label">horas</span></div>
+      <div class="cd-box"><span class="cd-num" id="cdMinutes">00</span><span class="cd-label">min</span></div>
+      <div class="cd-box"><span class="cd-num" id="cdSeconds">00</span><span class="cd-label">seg</span></div>
+    </div>
+    <p class="countdown-note" id="countdownNote"></p>
+  </section>
+
+  <!-- INFORMAÇÕES DO EVENTO -->
+  <section class="info-section reveal">
+    <p class="eyebrow center">detalhes da missão</p>
+    <h3 class="section-title center"><span class="shuriken" aria-hidden="true"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 2 L24 16 L38 12 L26 20 L38 28 L24 24 L20 38 L16 24 L2 28 L14 20 L2 12 L16 16 Z" fill="currentColor"/><circle cx="20" cy="20" r="3.5" fill="#0a0c09"/></svg></span> Informações</h3>
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="info-icon">📅</span>
+        <p class="info-label">Data</p>
+        <p class="info-value">27 de agosto</p>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">🕓</span>
+        <p class="info-label">Horário</p>
+        <p class="info-value">16:00</p>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">📍</span>
+        <p class="info-label">Local</p>
+        <p class="info-value">Córrego Dandas</p>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">🏡</span>
+        <p class="info-label">Endereço</p>
+        <p class="info-value">Casa do pai do João Miguel</p>
+      </div>
+    </div>
+    <a class="btn btn-outline" id="mapButton"
+       href="https://maps.app.goo.gl/3Av2yrpTm86SeXhy5?g_st=ac"
+       target="_blank" rel="noopener">
+      <span>Ver localização</span>
+    </a>
+  </section>
+
+  <!-- CONFIRMAÇÃO -->
+  <section class="rsvp-section reveal">
+    <p class="eyebrow center">o selo espera sua resposta</p>
+    <h3 class="section-title center"><span class="shuriken" aria-hidden="true"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M20 2 L24 16 L38 12 L26 20 L38 28 L24 24 L20 38 L16 24 L2 28 L14 20 L2 12 L16 16 Z" fill="currentColor"/><circle cx="20" cy="20" r="3.5" fill="#0a0c09"/></svg></span> Você aceita a missão?</h3>
+    <p class="rsvp-copy">Toque no botão abaixo para confirmar sua presença pelo WhatsApp.</p>
+    <button class="btn btn-mission" id="rsvpButton">
+      <span class="btn-mission-icon">🗲</span>
+      <span>ACEITAR MISSÃO</span>
+    </button>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final-section" id="finalSection">
+    <canvas id="finalCanvas" aria-hidden="true"></canvas>
+    <div class="final-content">
+      <i class="final-symbol">忍</i>
+      <p class="final-text">
+        Sua presença será o maior presente que poderemos receber.<br>
+        <strong>Esperamos você! ❤️</strong>
+      </p>
+      <p class="final-signature">João Miguel · 12 anos · 27 de agosto</p>
+    </div>
+  </section>
+
+  <!-- Controle de música (opcional, desativada por padrão) -->
+  <button class="music-toggle" id="musicToggle" aria-label="Ativar música de fundo">🔇</button>
+  <audio id="bgMusic" loop preload="none">
+    <source src="assets/musicas/tema.mp3" type="audio/mpeg">
+  </audio>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
